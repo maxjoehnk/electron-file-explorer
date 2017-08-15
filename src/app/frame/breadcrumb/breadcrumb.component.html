@@ -1,0 +1,8 @@
+<md-toolbar dense>
+    <div *ngFor="let folder of folders | async"
+         fxLayout
+         fxLayoutAlign="start center">
+        <button md-button (click)="navigate(folder.path)">{{folder.label}}</button>
+        <md-icon fontIcon="mdi-chevron-right" *ngIf="!last"></md-icon>
+    </div>
+</md-toolbar>

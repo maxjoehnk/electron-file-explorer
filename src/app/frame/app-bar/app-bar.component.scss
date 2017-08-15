@@ -1,0 +1,21 @@
+.container {
+    height: 32px;
+    background: #422574;
+    color: #fff;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+
+    .title {
+        margin-left: 8px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    button, i {
+        -webkit-app-region: no-drag;
+    }
+
+    i {
+        font-size: 16px;
+    }
+}

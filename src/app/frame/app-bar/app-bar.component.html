@@ -1,0 +1,13 @@
+<div class="container" fxLayout fxLayoutAlign="start center">
+    <span class="title">File Explorer - {{path | async}}</span>
+    <span fxFlex></span>
+    <button md-icon-button (click)="onMinimize()">
+        <i class="mdi mdi-window-minimize"></i>
+    </button>
+    <button md-icon-button (click)="onMaximize()">
+        <i class="mdi mdi-window-maximize"></i>
+    </button>
+    <button md-icon-button (click)="onClose()">
+        <i class="mdi mdi-window-close"></i>
+    </button>
+</div>
