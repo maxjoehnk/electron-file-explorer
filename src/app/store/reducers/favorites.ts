@@ -1,55 +1,23 @@
 import {
     All as Action
-} from '../actions/items';
+} from '../actions';
+import {FAVORITES_FETCH_SUCCESS} from '../actions/favorites';
 
-const initial: IFavoritesState = [
-    {
-        label: 'Applications',
-        icon: 'mdi-apps',
-        path: '/Applications'
-    },
-    {
-        label: 'Google Drive',
-        icon: 'mdi-google-drive',
-        path: '/Users/max/Google Drive'
-    },
-    {
-        label: 'Desktop',
-        path: '/Users/max/Desktop'
-    },
-    {
-        label: 'Documents',
-        icon: 'mdi-file-multiple',
-        path: '/Users/max/Documents'
-    },
-    {
-        label: 'Downloads',
-        icon: 'mdi-cloud-download',
-        path: '/Users/max/Downloads'
-    },
-    {
-        label: 'max',
-        icon: 'mdi-home',
-        path: '/Users/max'
-    },
-    {
-        label: 'Code',
-        path: '/Users/max/Documents/Code'
-    },
-    {
-        label: 'Library',
-        path: '/Users/max/Music/Traktor/Library'
-    }
-];
+const initial: IFavoritesState = [];
 
 export type IFavoritesState = IFavorite[];
 
-export type IFavorite = {
+export interface IFavorite {
     label: string;
     path: string;
     icon?: string;
 }
 
 export default (state: IFavoritesState = initial, action: Action) => {
-    return state;
+    switch (action.type) {
+        case FAVORITES_FETCH_SUCCESS:
+            return action.payload;
+        default:
+            return state;
+    }
 };
