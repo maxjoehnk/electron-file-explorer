@@ -11,6 +11,9 @@
         margin-left: 8px;
         font-weight: 500;
         font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 
     button, i {

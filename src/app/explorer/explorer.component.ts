@@ -28,16 +28,19 @@ export class ExplorerComponent implements OnInit {
     }
 
     onClick(item: any) {
-        if (item.directory) {
-            this.store.dispatch(new Navigate(item.path));
-        } else {
-            if (item.type) {
+        switch (item.type) {
+            case 'folder':
+                this.store.dispatch(new Navigate(item.path));
+                break;
+            case 'image':
+            case 'video':
                 this.dialog.open(DialogComponent, {
                     data: item
                 });
-            } else {
+                break;
+            default:
                 ipcRenderer.send('OPEN_ITEM', item.path);
-            }
+                break;
         }
     }
 }
