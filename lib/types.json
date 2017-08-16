@@ -1,0 +1,40 @@
+{
+    "version": "1.0.0",
+    "types": {
+        "application": [
+            "*.exe"
+        ],
+        "music": [
+            "*.mp3",
+            "*.wav",
+            "*.ogg",
+            "*.flac",
+            "*.wma",
+            "*.m4a"
+        ],
+        "image": [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.svg",
+            "*.psd",
+            "*.gif"
+        ],
+        "video": [
+            "*.mp4",
+            "*.wmv",
+            "*.mov"
+        ],
+        "text": [
+            "*.txt",
+            "*.doc",
+            "*.docx"
+        ],
+        "archive": [
+            "*.zip",
+            "*.tar.gz",
+            "*.tar",
+            "*.rar"
+        ]
+    }
+}

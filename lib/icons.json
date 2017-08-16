@@ -1,0 +1,36 @@
+{
+    "version": "1.0.0",
+    "names": {
+        "*.app": "mdi-application",
+        "node_modules": "mdi-nodejs",
+        ".vscode": "mdi-visualstudio",
+        "*.pdf": "mdi-file-pdf",
+        "*.js": "mdi-language-javascript",
+        "*.jsx": "mdi-language-javascript",
+        "*.html": "mdi-language-html5",
+        "*.ts": "mdi-language-typescript",
+        "*.py": "mdi-language-python",
+        "*.svg": "mdi-svg",
+        "*.c": "mdi-language-c",
+        "*.h": "mdi-language-h",
+        "*.cpp": "mdi-language-cpp",
+        "*.hpp": "mdi-language-cpp",
+        "*.css": "mdi-language-css3",
+        "*.php": "mdi-language-php",
+        "*.md": "mdi-markdown",
+        "*.json": "mdi-json",
+        "*.xml": "mdi-file-xml",
+        "*.yml": "mdi-file-xml"
+    },
+    "types": {
+        "application": "mdi-application",
+        "music": "mdi-file-music",
+        "image": "mdi-file-image",
+        "video": "mdi-file-video",
+        "text": "mdi-file-document",
+        "folder": "mdi-folder",
+        "archive": "mdi-zip-box"
+    },
+    "default": "mdi-file",
+    "hidden": "mdi-file-hidden"
+}
