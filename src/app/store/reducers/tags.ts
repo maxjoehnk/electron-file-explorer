@@ -1,14 +1,9 @@
 import {
     All as Action
-} from '../actions/items';
-import {ITEMS_FETCH_SUCCESS} from '../actions/items';
+} from '../actions';
+import {TAGS_FETCH_SUCCESS} from '../actions/tags';
 
-const initial: ITagState = [
-    {
-        label: 'University',
-        color: '#FF5722'
-    }
-];
+const initial: ITagState = [];
 
 export type ITagState = ITag[];
 
@@ -18,5 +13,10 @@ export type ITag = {
 }
 
 export default (state: ITagState = initial, action: Action) => {
-    return state;
+    switch (action.type) {
+        case TAGS_FETCH_SUCCESS:
+            return action.payload;
+        default:
+            return state;
+    }
 };

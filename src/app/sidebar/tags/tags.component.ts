@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IState, ITagState} from '../../store';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
+import {FetchTags} from '../../store/actions/tags';
 
 @Component({
     selector: 'app-sidebar-tags',
@@ -17,6 +18,7 @@ export class TagsComponent implements OnInit {
 
     ngOnInit() {
         this.tags = this.store.select('tags');
+        this.store.dispatch(new FetchTags());
     }
 
 }
