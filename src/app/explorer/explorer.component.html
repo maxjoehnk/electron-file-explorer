@@ -1,0 +1,11 @@
+<app-list [items]="items | async"
+          (open)="onClick($event)"
+          *ngIf="viewMode === 'list'"></app-list>
+<app-detailed-list [items]="items | async"
+                   (open)="onClick($event)"
+                   *ngIf="viewMode === 'detailed-list'"></app-detailed-list>
+<button md-fab
+    class="add-btn"
+    [class.breadcrumb]="true">
+    <md-icon fontIcon="mdi-plus"></md-icon>
+</button>

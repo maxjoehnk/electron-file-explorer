@@ -1,0 +1,9 @@
+<md-nav-list dense>
+    <h3 md-subheader>Favorites</h3>
+    <a md-list-item
+       *ngFor="let favorite of favorites | async"
+       (click)="navigate(favorite.path)">
+        <md-icon md-list-icon [fontIcon]="favorite.icon || 'mdi-folder'"></md-icon>
+        <span>{{favorite.label}}</span>
+    </a>
+</md-nav-list>

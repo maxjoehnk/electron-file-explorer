@@ -1,7 +1,19 @@
 @import '~mdi/css/materialdesignicons.css';
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import './theme';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+@include angular-material-theme($app-theme);
 
 body {
     margin: 0;
-    font-family: Roboto;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+md-icon.mdi {
+    font-size: 24px;
+    line-height: 24px;
 }

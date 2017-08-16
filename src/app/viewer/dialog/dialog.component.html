@@ -1,0 +1,7 @@
+<h2 md-dialog-title>{{data.filename}}</h2>
+<md-dialog-content>
+    <app-video-viewer [path]="'file://' + data.path"
+                      *ngIf="data.type === 'video'"></app-video-viewer>
+    <app-image-viewer [path]="'file://' + data.path"
+                      *ngIf="data.type === 'image'"></app-image-viewer>
+</md-dialog-content>

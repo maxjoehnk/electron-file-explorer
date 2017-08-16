@@ -1,0 +1,38 @@
+:host {
+    width: 100%;
+    overflow: auto;
+
+    .hidden {
+        .item-icon {
+            opacity: 0.38;
+        }
+
+        .item-label {
+            opacity: 0.54;
+        }
+    }
+
+    .item-icon {
+        //opacity: 0.54;
+    }
+
+    .item-label {
+        opacity: 0.87;
+    }
+}
+
+
+.add-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1;
+
+    md-icon {
+        opacity: 0.87;
+    }
+
+    &.breadcrumb {
+        bottom: 36px;
+    }
+}

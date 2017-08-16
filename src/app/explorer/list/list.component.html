@@ -1,0 +1,12 @@
+<md-nav-list dense>
+    <a md-list-item
+       *ngFor="let item of items"
+       (click)="onClick(item)"
+       [class.hidden]="item.hidden">
+        <md-icon md-list-icon
+                 class="item-icon"
+                 [fontIcon]="item.icon"
+                 [style.color]="item.color"></md-icon>
+        <span class="item-label">{{item.filename}}</span>
+    </a>
+</md-nav-list>

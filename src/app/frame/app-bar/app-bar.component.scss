@@ -1,6 +1,8 @@
+@import '../../../theme';
+
 .container {
     height: 32px;
-    background: #422574;
+    background: mat-color($app-primary, 700);
     color: #fff;
     -webkit-app-region: drag;
     -webkit-user-select: none;

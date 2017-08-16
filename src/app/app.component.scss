@@ -1,16 +1,11 @@
 md-sidenav-container {
     height: calc(100vh - 96px);
 
-    app-breadcrumb {
-        width: 100%;
+    md-sidenav {
+        min-width: 200px;
     }
 
-    .items {
+    app-breadcrumb {
         width: 100%;
-        overflow: auto;
-
-        .hidden {
-            opacity: .75;
-        }
     }
 }
