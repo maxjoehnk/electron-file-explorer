@@ -42,7 +42,7 @@ export class NavBarComponent implements OnInit {
         this.store.dispatch(new HistoryForward());
     }
 
-    changeViewMode(mode) {
+    changeViewMode(mode) {
         this.viewMode.emit(mode.value);
     }
 

@@ -1,9 +1,15 @@
 <md-nav-list dense>
-    <h3 md-subheader>Tags</h3>
-    <a md-list-item
-       *ngFor="let tag of tags | async"
-       (click)="open(tag)">
-        <span class="tag-color" [style.background]="tag.color"></span>
-        <span class="tag-label">{{tag.label}}</span>
-    </a>
+    <app-sidebar-header
+        title="Tags"
+        [visible]="visible"
+        (toggle)="onToggle()">
+    </app-sidebar-header>
+    <ng-container *ngIf="visible">
+        <a md-list-item
+           *ngFor="let tag of tags | async"
+           (click)="open(tag)">
+            <span class="tag-color" [style.background]="tag.color"></span>
+            <span class="tag-label">{{tag.label}}</span>
+        </a>
+    </ng-container>
 </md-nav-list>

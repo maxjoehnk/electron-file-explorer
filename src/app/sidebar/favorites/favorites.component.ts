@@ -14,9 +14,9 @@ import {FetchFavorites} from '../../store/actions/favorites';
 export class FavoritesComponent implements OnInit {
 
     favorites: Observable<IFavorite[]>;
+    visible: boolean = true;
 
-    constructor(private store: Store<IState>) {
-    }
+    constructor(private store: Store<IState>) {}
 
     ngOnInit() {
         this.favorites = this.store.select('favorites');
@@ -25,6 +25,10 @@ export class FavoritesComponent implements OnInit {
 
     navigate(path: string) {
         this.store.dispatch(new Navigate(path));
+    }
+
+    onToggle() {
+        this.visible = !this.visible;
     }
 
 }

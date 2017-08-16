@@ -1,0 +1,19 @@
+.visibility {
+    opacity: 0;
+    transition: opacity linear 0.01s;
+    float: right;
+    font-weight: bold;
+
+    &:active {
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+h3 {
+    user-select: none;
+    cursor: default;
+
+    &:hover .visibility {
+        opacity: 1;
+    }
+}

@@ -11,7 +11,8 @@ import {FetchTags} from '../../store/actions/tags';
 })
 export class TagsComponent implements OnInit {
 
-    tags: Observable<ITagState>
+    visible: boolean = true;
+    tags: Observable<ITagState>;
 
     constructor(private store: Store<IState>) {
     }
@@ -19,6 +20,14 @@ export class TagsComponent implements OnInit {
     ngOnInit() {
         this.tags = this.store.select('tags');
         this.store.dispatch(new FetchTags());
+    }
+
+    open() {
+        
+    }
+
+    onToggle() {
+        this.visible = !this.visible;
     }
 
 }

@@ -1,9 +1,15 @@
 <md-nav-list dense>
-    <h3 md-subheader>Network</h3>
-    <a md-list-item
-       *ngFor="let device of devices | async"
-       (click)="navigate(device.path)">
-        <md-icon md-list-icon [fontIcon]="device.icon || 'mdi-desktop-mac'"></md-icon>
-        <span>{{device.label}}</span>
-    </a>
+    <app-sidebar-header
+        title="Network"
+        [visible]="visible"
+        (toggle)="onToggle()">
+    </app-sidebar-header>
+    <ng-container *ngIf="visible">
+        <a md-list-item
+           *ngFor="let device of devices | async"
+           (click)="navigate(device.path)">
+            <md-icon md-list-icon [fontIcon]="device.icon || 'mdi-desktop-mac'"></md-icon>
+            <span>{{device.label}}</span>
+        </a>
+    </ng-container>
 </md-nav-list>
