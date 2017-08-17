@@ -1,4 +1,5 @@
 const {homedir} = require('os');
+const {join} = require('path');
 
 exports.seed = function (knex) {
     const home = homedir();
@@ -10,19 +11,19 @@ exports.seed = function (knex) {
                     id: 1,
                     label: 'Desktop',
                     icon: 'mdi-desktop-mac',
-                    path: `${home}/Desktop`
+                    path: join(home, 'Desktop')
                 },
                 {
                     id: 2,
                     label: 'Documents',
                     icon: 'mdi-file-multiple',
-                    path: `${home}/Documents`
+                    path: join(home, 'Documents')
                 },
                 {
                     id: 3,
                     label: 'Downloads',
                     icon: 'mdi-cloud-download',
-                    path: `${home}/Downloads`
+                    path: join(home, 'Downloads')
                 },
                 {
                     id: 4,
