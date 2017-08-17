@@ -4,6 +4,7 @@ import favorites, { IFavoritesState } from './reducers/favorites'
 import network, { INetworkState } from './reducers/network';
 import tags, { ITagState } from './reducers/tags';
 import history, { IHistoryState } from './reducers/history';
+import devices, { IDevicesState } from './reducers/devices';
 
 interface IState {
     path: IPathState;
@@ -12,6 +13,7 @@ interface IState {
     network: INetworkState;
     tags: ITagState;
     history: IHistoryState;
+    devices: IDevicesState;
 }
 
 const reducers = {
@@ -20,7 +22,8 @@ const reducers = {
     favorites,
     network,
     tags,
-    history
+    history,
+    devices
 };
 
 export default reducers;
@@ -32,5 +35,6 @@ export {
     IFavoritesState,
     INetworkState,
     ITagState,
-    IHistoryState
+    IHistoryState,
+    IDevicesState
 };

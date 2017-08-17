@@ -32,6 +32,7 @@ import { effects } from './store/effects';
 import { SettingsComponent } from './settings/settings.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FavoritesComponent } from './sidebar/favorites/favorites.component';
+import { DevicesComponent } from './sidebar/devices/devices.component';
 import { TagsComponent } from './sidebar/tags/tags.component';
 import { NetworkComponent } from './sidebar/network/network.component';
 import { ExplorerComponent } from './explorer/explorer.component';
@@ -50,6 +51,7 @@ import { FileComponent } from './create/file/file.component';
         SettingsComponent,
         SidebarComponent,
         FavoritesComponent,
+        DevicesComponent,
         TagsComponent,
         NetworkComponent,
         ExplorerComponent,

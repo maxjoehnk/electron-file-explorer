@@ -5,6 +5,7 @@ import {ItemEffects} from './items';
 import {HistoryEffects} from './history';
 import {FavoriteEffects} from './favorites';
 import {TagEffects} from './tags';
+import {DeviceEffects} from './devices';
 
 export const effects: Type<any>[] = [
     WindowEffects,
@@ -12,5 +13,6 @@ export const effects: Type<any>[] = [
     ItemEffects,
     HistoryEffects,
     FavoriteEffects,
-    TagEffects
+    TagEffects,
+    DeviceEffects
 ];
