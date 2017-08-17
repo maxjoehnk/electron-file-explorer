@@ -13,8 +13,10 @@ import {
     MdCardModule,
     MdSlideToggleModule,
     MdButtonToggleModule,
-    MdInputModule
+    MdInputModule,
+    MdTableModule
 } from '@angular/material';
+import { CdkTableModule } from '@angular/cdk';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
@@ -72,6 +74,8 @@ import { FileComponent } from './create/file/file.component';
         MdCardModule,
         MdButtonToggleModule,
         MdInputModule,
+        MdTableModule,
+        CdkTableModule,
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot(effects),
         StoreDevtoolsModule.instrument({

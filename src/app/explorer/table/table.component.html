@@ -1,3 +1,14 @@
-<p>
-  table works!
-</p>
+<md-table #table [dataSource]="dataSource">
+    <ng-container cdkColumnDef="filename">
+        <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
+        <md-cell *cdkCellDef="let row"> {{row.filename}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="modifiedDate">
+        <md-header-cell *cdkHeaderCellDef> Date Modified </md-header-cell>
+        <md-cell *cdkCellDef="let row"> {{row.stats.mtime | date}} </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="columns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: columns;"></md-row>
+</md-table>
