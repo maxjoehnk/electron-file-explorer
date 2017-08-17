@@ -3,6 +3,9 @@ import {Store} from '@ngrx/store';
 import {IState} from '../../store';
 import {Navigate} from '../../store/actions/path';
 import {Observable} from "rxjs/Observable";
+import {remote} from 'electron';
+
+const { sep } = remote.require('path');
 
 @Component({
     selector: 'app-breadcrumb',
@@ -18,16 +21,16 @@ export class BreadcrumbComponent implements OnInit {
     ngOnInit() {
         this.folders = this.store
             .select('path')
-            .map(path => path.split('/').map((part, i, path) => {
+            .map(path => path.split(sep).map((part, i, path) => {
                 if (i === 0) {
                     return {
-                        label: '/',
-                        path: '/'
+                        label: part || '/',
+                        path: part || sep
                     };
                 }
                 return {
                     label: part,
-                    path: [...path].splice(0, i + 1).join('/')
+                    path: [...path].splice(0, i + 1).join(sep)
                 };
             }));
     }
