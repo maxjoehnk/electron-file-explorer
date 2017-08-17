@@ -4,8 +4,12 @@
 <app-detailed-list [items]="items | async"
                    (open)="onClick($event)"
                    *ngIf="viewMode === 'detailed-list'"></app-detailed-list>
+<app-table [items]="items | async"
+           (open)="onClick($event)"
+           *ngIf="viewMode === 'table'"></app-table>
 <button md-fab
     class="add-btn"
-    [class.breadcrumb]="true">
+    [class.breadcrumb]="true"
+    (click)="create()">
     <md-icon fontIcon="mdi-plus"></md-icon>
 </button>

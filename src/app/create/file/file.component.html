@@ -1,0 +1,22 @@
+<h2 md-dialog-title>New File</h2>
+<md-dialog-content>
+    <form id="file" (submit)="create()">
+        <md-input-container>
+            <input mdInput
+                   [(ngModel)]="filename"
+                   name="filename"/>
+        </md-input-container>
+    </form>
+</md-dialog-content>
+<md-dialog-actions>
+    <button md-button
+            type="button"
+            [md-dialog-close]="false">Cancel
+    </button>
+    <button md-button
+            type="submit"
+            form="file"
+            [md-dialog-close]="filename"
+            color="primary">Create
+    </button>
+</md-dialog-actions>

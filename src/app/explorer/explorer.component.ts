@@ -1,3 +1,4 @@
+import 'rxjs/add/operator/withLatestFrom';
 import {Component, Input, OnInit} from '@angular/core';
 import {IState} from '../store/index';
 import {Store} from '@ngrx/store';
@@ -6,6 +7,8 @@ import {DialogComponent} from '../viewer/dialog/dialog.component';
 import {MdDialog} from '@angular/material';
 import {Observable} from 'rxjs/Observable';
 import {ipcRenderer} from 'electron';
+import {FileComponent} from '../create/file/file.component';
+import {CreateFile} from '../store/actions/items';
 
 @Component({
     selector: 'app-explorer',
@@ -42,5 +45,17 @@ export class ExplorerComponent implements OnInit {
                 ipcRenderer.send('OPEN_ITEM', item.path);
                 break;
         }
+    }
+
+    create() {
+        const dialogRef = this.dialog.open(FileComponent);
+        dialogRef
+            .afterClosed()
+            .withLatestFrom(this.store.select('path'))
+            .subscribe(([filename, path]) => {
+                if (filename) {
+                    this.store.dispatch(new CreateFile(path, filename));
+                }
+            });
     }
 }

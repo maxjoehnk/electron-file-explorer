@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
     MdButtonModule,
@@ -11,7 +12,8 @@ import {
     MdDialogModule,
     MdCardModule,
     MdSlideToggleModule,
-    MdButtonToggleModule
+    MdButtonToggleModule,
+    MdInputModule
 } from '@angular/material';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
@@ -34,6 +36,8 @@ import { ExplorerComponent } from './explorer/explorer.component';
 import { ListComponent } from './explorer/list/list.component';
 import { DetailedListComponent } from './explorer/detailed-list/detailed-list.component';
 import { TableComponent } from './explorer/table/table.component';
+import { HeaderComponent } from './sidebar/header/header.component';
+import { FileComponent } from './create/file/file.component';
 
 @NgModule({
     declarations: [
@@ -49,11 +53,14 @@ import { TableComponent } from './explorer/table/table.component';
         ExplorerComponent,
         ListComponent,
         DetailedListComponent,
-        TableComponent
+        TableComponent,
+        HeaderComponent,
+        FileComponent
     ],
     imports: [
         BrowserModule,
         FlexLayoutModule,
+        FormsModule,
         BrowserAnimationsModule,
         MdButtonModule,
         MdToolbarModule,
@@ -64,6 +71,7 @@ import { TableComponent } from './explorer/table/table.component';
         MdSlideToggleModule,
         MdCardModule,
         MdButtonToggleModule,
+        MdInputModule,
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot(effects),
         StoreDevtoolsModule.instrument({
@@ -74,7 +82,8 @@ import { TableComponent } from './explorer/table/table.component';
     providers: [],
     bootstrap: [AppComponent],
     entryComponents: [
-        SettingsComponent
+        SettingsComponent,
+        FileComponent
     ]
 })
 export class AppModule {
