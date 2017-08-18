@@ -13,6 +13,9 @@ export class DetailedListComponent implements OnInit {
     @Output()
     open: EventEmitter<any> = new EventEmitter<any>();
 
+    @Output()
+    preview: EventEmitter<any> = new EventEmitter<any>();
+
     constructor() {
     }
 
@@ -20,6 +23,10 @@ export class DetailedListComponent implements OnInit {
     }
 
     onClick(item) {
+        this.preview.emit(item);
+    }
+
+    onDblClick(item) {
         this.open.emit(item);
     }
 }

@@ -1,11 +1,14 @@
 <app-list [items]="items | async"
-          (open)="onClick($event)"
+          (open)="open($event)"
+          (preview)="preview($event)"
           *ngIf="viewMode === 'list'"></app-list>
 <app-detailed-list [items]="items | async"
-                   (open)="onClick($event)"
+                   (open)="open($event)"
+                   (preview)="preview($event)"
                    *ngIf="viewMode === 'detailed-list'"></app-detailed-list>
 <app-table [items]="items | async"
-           (open)="onClick($event)"
+           (open)="open($event)"
+           (preview)="preview($event)"
            *ngIf="viewMode === 'table'"></app-table>
 <button md-fab
     class="add-btn"

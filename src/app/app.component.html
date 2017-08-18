@@ -1,11 +1,19 @@
 <app-app-bar></app-app-bar>
 <app-nav-bar (viewMode)="changeViewMode($event)"></app-nav-bar>
 <md-sidenav-container>
-    <md-sidenav mode="side" opened="true">
+    <md-sidenav mode="side"
+                opened="true"
+                class="sidebar">
         <app-sidebar></app-sidebar>
     </md-sidenav>
     <div fxLayout="column" fxLayoutAlign="space-between start" fxFill>
         <app-explorer [viewMode]="viewMode"></app-explorer>
         <app-breadcrumb></app-breadcrumb>
     </div>
+    <md-sidenav mode="side"
+                align="end"
+                class="preview"
+                [opened]="(preview | async).show">
+        <app-preview [file]="(preview | async).file"></app-preview>
+    </md-sidenav>
 </md-sidenav-container>

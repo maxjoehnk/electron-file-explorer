@@ -41,6 +41,10 @@ import { DetailedListComponent } from './explorer/detailed-list/detailed-list.co
 import { TableComponent } from './explorer/table/table.component';
 import { HeaderComponent } from './sidebar/header/header.component';
 import { FileComponent } from './create/file/file.component';
+import { PreviewComponent } from './preview/preview.component';
+import { BytesPipe } from './pipes/bytes.pipe';
+import { ImagePreviewComponent } from './preview/image/image.component';
+import { VideoPreviewComponent } from './preview/video/video.component';
 
 @NgModule({
     declarations: [
@@ -59,7 +63,11 @@ import { FileComponent } from './create/file/file.component';
         DetailedListComponent,
         TableComponent,
         HeaderComponent,
-        FileComponent
+        FileComponent,
+        PreviewComponent,
+        BytesPipe,
+        ImagePreviewComponent,
+        VideoPreviewComponent
     ],
     imports: [
         BrowserModule,

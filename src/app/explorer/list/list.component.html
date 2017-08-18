@@ -2,6 +2,7 @@
     <a md-list-item
        *ngFor="let item of items"
        (click)="onClick(item)"
+       (dblclick)="onDblClick(item)"
        [class.hidden]="item.hidden">
         <md-icon md-list-icon
                  class="item-icon"

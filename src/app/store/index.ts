@@ -5,6 +5,7 @@ import network, { INetworkState } from './reducers/network';
 import tags, { ITagState } from './reducers/tags';
 import history, { IHistoryState } from './reducers/history';
 import devices, { IDevicesState } from './reducers/devices';
+import preview, { IPreviewState } from './reducers/preview';
 
 interface IState {
     path: IPathState;
@@ -14,6 +15,7 @@ interface IState {
     tags: ITagState;
     history: IHistoryState;
     devices: IDevicesState;
+    preview: IPreviewState;
 }
 
 const reducers = {
@@ -23,7 +25,8 @@ const reducers = {
     network,
     tags,
     history,
-    devices
+    devices,
+    preview
 };
 
 export default reducers;
@@ -36,5 +39,6 @@ export {
     INetworkState,
     ITagState,
     IHistoryState,
-    IDevicesState
+    IDevicesState,
+    IPreviewState
 };

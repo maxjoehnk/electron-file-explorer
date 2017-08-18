@@ -1,0 +1,34 @@
+<h2 class="mat-title">
+    <md-icon [fontIcon]="file?.icon"
+             [style.color]="file?.color"></md-icon>
+    <span>{{file?.filename}}</span>
+    <button (click)="close()" md-icon-button>
+        <md-icon fontIcon="mdi-close"></md-icon>
+    </button>
+</h2>
+<div class="preview">
+    <app-image-preview [path]="'file://' + file?.path"
+                       *ngIf="isImage()">
+    </app-image-preview>
+    <app-video-preview [path]="'file://' + file?.path"
+                       *ngIf="isVideo()">
+    </app-video-preview>
+</div>
+<div class="metadata mat-body-1">
+    <div class="row">
+        <span class="label">Type</span>
+        <span class="value">{{file?.type}}</span>
+    </div>
+    <div class="row">
+        <span class="label">Size</span>
+        <span class="value">{{file?.metadata?.size | bytes}}</span>
+    </div>
+    <div class="row">
+        <span class="label">Created at</span>
+        <span class="value">{{file?.metadata?.createdAt | date}}</span>
+    </div>
+    <div class="row">
+        <span class="label">Last Modified</span>
+        <span class="value">{{file?.metadata?.updatedAt | date}}</span>
+    </div>
+</div>

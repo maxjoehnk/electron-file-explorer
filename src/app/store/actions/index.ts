@@ -5,6 +5,7 @@ import { All as History } from './history';
 import { All as Favorites } from './favorites';
 import { All as Tags } from './tags';
 import { All as Devices } from './devices';
+import { All as Preview } from './preview';
 
 export type All =
     Window |
@@ -13,4 +14,5 @@ export type All =
     History |
     Favorites |
     Tags |
-    Devices;
+    Devices |
+    Preview;

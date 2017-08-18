@@ -1,11 +1,15 @@
 md-sidenav-container {
     height: calc(100vh - 96px);
 
-    md-sidenav {
+    .sidebar {
         min-width: 200px;
     }
 
     app-breadcrumb {
         width: 100%;
+    }
+
+    .preview {
+        width: 300px;
     }
 }

@@ -1,0 +1,32 @@
+h2 {
+    color: rgba(0, 0, 0, 0.87);
+
+    md-icon {
+        margin: 24px;
+    }
+}
+
+.preview {
+    img {
+        width: 300px;
+    }
+}
+
+.metadata {
+    margin-left: 24px;
+    margin-top: 32px;
+
+    .row {
+        display: flex;
+        margin-bottom: 8px;
+
+        .label {
+            width: 100px;
+            color: rgba(0, 0, 0, 0.54);
+        }
+
+        .value {
+            color: rgba(0, 0, 0, 0.87);
+        }
+    }
+}
