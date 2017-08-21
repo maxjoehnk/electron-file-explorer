@@ -1,12 +1,13 @@
 import {Component, Input} from '@angular/core';
+import {PreviewComponent} from '../preview.component';
 
 @Component({
-    selector: 'app-image-preview',
+    selector: 'fe-image-preview',
     templateUrl: './image.component.html',
     styleUrls: ['./image.component.scss']
 })
-export class ImagePreviewComponent {
+export class ImagePreviewComponent implements PreviewComponent {
 
     @Input()
-    path: string;
+    file: any;
 }

@@ -6,14 +6,8 @@
         <md-icon fontIcon="mdi-close"></md-icon>
     </button>
 </h2>
-<div class="preview">
-    <app-image-preview [path]="'file://' + file?.path"
-                       *ngIf="isImage()">
-    </app-image-preview>
-    <app-video-preview [path]="'file://' + file?.path"
-                       *ngIf="isVideo()">
-    </app-video-preview>
-</div>
+<fe-preview-container [file]="file">
+</fe-preview-container>
 <div class="metadata mat-body-1">
     <div class="row">
         <span class="label">Type</span>

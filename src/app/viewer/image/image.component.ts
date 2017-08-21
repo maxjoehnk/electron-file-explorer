@@ -1,19 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ViewerComponent} from '../viewer.component';
 
 @Component({
-    selector: 'app-image-viewer',
+    selector: 'fe-image-viewer',
     templateUrl: './image.component.html',
     styleUrls: ['./image.component.scss']
 })
-export class ImageComponent implements OnInit {
+export class ImageViewerComponent implements ViewerComponent {
 
     @Input()
-    path: string;
-
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
-
+    file: any;
 }

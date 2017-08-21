@@ -1,18 +1,32 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {VideoComponent} from './video/video.component';
-import {DialogComponent} from './dialog/dialog.component';
-import {ImageComponent} from './image/image.component';
+import {ViewerDialogComponent} from './dialog/dialog.component';
+import {ImageViewerComponent} from './image/image.component';
+import {VideoViewerComponent} from './video/video.component';
 import {MdDialogModule} from '@angular/material';
+import {ViewerService} from './viewer.service';
+import {ViewerDirective} from './viewer.directive';
+import {ViewerContainerComponent} from './container/container.component';
 
 @NgModule({
     imports: [
         CommonModule,
         MdDialogModule
     ],
-    declarations: [VideoComponent, DialogComponent, ImageComponent],
+    declarations: [
+        ViewerDialogComponent,
+        ImageViewerComponent,
+        VideoViewerComponent,
+        ViewerDirective,
+        ViewerContainerComponent
+    ],
+    providers: [
+        ViewerService
+    ],
     entryComponents: [
-        DialogComponent
+        ViewerDialogComponent,
+        ImageViewerComponent,
+        VideoViewerComponent
     ]
 })
 export class ViewerModule {

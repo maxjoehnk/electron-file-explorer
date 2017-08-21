@@ -3,13 +3,13 @@ import {Component, Input, OnInit} from '@angular/core';
 import {IState} from '../store/index';
 import {Store} from '@ngrx/store';
 import {Navigate} from '../store/actions/path';
-import {DialogComponent} from '../viewer/dialog/dialog.component';
 import {MdDialog} from '@angular/material';
 import {Observable} from 'rxjs/Observable';
 import {ipcRenderer} from 'electron';
 import {FileComponent} from '../create/file/file.component';
 import {CreateFile} from '../store/actions/items';
 import {OpenPreview} from '../store/actions/preview';
+import {ViewerService} from '../viewer/viewer.service';
 
 @Component({
     selector: 'app-explorer',
@@ -24,7 +24,9 @@ export class ExplorerComponent implements OnInit {
     items: Observable<any[]>;
 
     constructor(private store: Store<IState>,
-                private dialog: MdDialog) {}
+                private dialog: MdDialog,
+                private viewer: ViewerService) {
+    }
 
 
     ngOnInit(): void {
@@ -36,16 +38,11 @@ export class ExplorerComponent implements OnInit {
     }
 
     open(item: any) {
-        const image = /^image\/.*/;
-        const video = /^video\/.*/;
         if (item.directory) {
             this.store.dispatch(new Navigate(item.path));
-        }else if (image.test(item.mimetype) ||
-            video.test(item.mimetype)) {
-            this.dialog.open(DialogComponent, {
-                data: item
-            });
-        }else {
+        } else if (this.viewer.hasInternalViewer(item)) {
+            this.viewer.openInModal(item);
+        } else {
             ipcRenderer.send('OPEN_ITEM', item.path);
         }
     }
