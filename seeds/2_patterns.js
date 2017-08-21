@@ -19,6 +19,10 @@ exports.seed = async function (knex, Promise) {
             pattern: '*.gif'
         },
         {
+            type_id: '26cf3631-b691-4377-be84-8d36277cc3ba',
+            pattern: '*.tif'
+        },
+        {
             type_id: 'e554f3f3-d2b8-43c5-b2db-0484504df811',
             pattern: '*.mp3'
         },

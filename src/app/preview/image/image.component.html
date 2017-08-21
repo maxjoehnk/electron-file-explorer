@@ -1,1 +1,4 @@
-<img [src]="file?.path"/>
+<img [src]="path"
+     *ngIf="native"/>
+<canvas #canvas *ngIf="!native">
+</canvas>

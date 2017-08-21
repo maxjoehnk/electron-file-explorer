@@ -24,6 +24,13 @@ exports.seed = async function (knex, Promise) {
             icon: null
         },
         {
+            id: '26cf3631-b691-4377-be84-8d36277cc3ba',
+            category_id: 'a2f83ef8-8357-11e7-bd5d-2cf0ee15620c',
+            label: 'TIFF Image',
+            color: null,
+            icon: null
+        },
+        {
             id: 'e554f3f3-d2b8-43c5-b2db-0484504df811',
             category_id: 'af54716c-8357-11e7-801e-2cf0ee15620c',
             label: 'MPEG Audio Layer 3',
