@@ -1,6 +1,5 @@
 import {
     Component,
-    AfterViewInit,
     ComponentFactoryResolver,
     ViewChild,
     Input,
@@ -16,7 +15,7 @@ import {PreviewComponent} from '../preview.component';
     templateUrl: './container.component.html',
     styleUrls: ['./container.component.scss']
 })
-export class PreviewContainerComponent implements AfterViewInit, OnChanges {
+export class PreviewContainerComponent implements OnChanges {
 
     @ViewChild(PreviewDirective)
     previewHost: PreviewDirective;
@@ -28,21 +27,18 @@ export class PreviewContainerComponent implements AfterViewInit, OnChanges {
                 private preview: PreviewService) {
     }
 
-    ngAfterViewInit() {
-        this.loadComponent();
-    }
-
     ngOnChanges(changes: SimpleChanges): void {
-        this.loadComponent();
+        if (changes.file) {
+            this.loadComponent();
+        }
     }
 
     loadComponent() {
-        let component = this.file && this.preview.getComponentFromFile(this.file);
+        const viewContainerRef = this.previewHost.viewContainerRef;
+        viewContainerRef.clear();
+        const component = this.file && this.preview.getComponentFromFile(this.file);
         if (component) {
             let componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-
-            let viewContainerRef = this.previewHost.viewContainerRef;
-            viewContainerRef.clear();
 
             let componentRef = viewContainerRef.createComponent(componentFactory);
             (<PreviewComponent>componentRef.instance).file = this.file;

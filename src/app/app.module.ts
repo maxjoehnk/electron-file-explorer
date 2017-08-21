@@ -46,6 +46,14 @@ import {FileComponent} from './create/file/file.component';
 import {DetailsComponent} from './details/details.component';
 import {GridComponent} from './explorer/grid/grid.component';
 import {FileExplorerCommonModule} from './common/common.module';
+import {environment} from '../environments/environment';
+
+const devModules = [];
+if (!environment.production) {
+    devModules.push(StoreDevtoolsModule.instrument({
+        maxAge: 25
+    }));
+}
 
 @NgModule({
     declarations: [
@@ -88,12 +96,10 @@ import {FileExplorerCommonModule} from './common/common.module';
         CdkTableModule,
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot(effects),
-        StoreDevtoolsModule.instrument({
-            maxAge: 25
-        }),
         ViewerModule,
         PreviewModule,
-        FileExplorerCommonModule
+        FileExplorerCommonModule,
+        ...devModules
     ],
     providers: [],
     bootstrap: [AppComponent],

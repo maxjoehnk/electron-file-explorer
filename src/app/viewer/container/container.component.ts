@@ -1,6 +1,5 @@
 import {
     Component,
-    AfterViewInit,
     ComponentFactoryResolver,
     ViewChild,
     Input,
@@ -16,7 +15,7 @@ import {ViewerComponent} from '../viewer.component';
     templateUrl: './container.component.html',
     styleUrls: ['./container.component.scss']
 })
-export class ViewerContainerComponent implements AfterViewInit, OnChanges {
+export class ViewerContainerComponent implements OnChanges {
 
     @ViewChild(ViewerDirective)
     viewerHost: ViewerDirective;
@@ -28,12 +27,10 @@ export class ViewerContainerComponent implements AfterViewInit, OnChanges {
                 private viewer: ViewerService) {
     }
 
-    ngAfterViewInit() {
-        this.loadComponent();
-    }
-
     ngOnChanges(changes: SimpleChanges): void {
-        this.loadComponent();
+        if (changes.file) {
+            this.loadComponent();
+        }
     }
 
     loadComponent() {
