@@ -10,6 +10,7 @@ import {FileComponent} from '../create/file/file.component';
 import {CreateFile} from '../store/actions/items';
 import {OpenPreview} from '../store/actions/preview';
 import {ViewerService} from '../viewer/viewer.service';
+import {FileService} from '../common/file.service';
 
 @Component({
     selector: 'app-explorer',
@@ -25,7 +26,8 @@ export class ExplorerComponent implements OnInit {
 
     constructor(private store: Store<IState>,
                 private dialog: MdDialog,
-                private viewer: ViewerService) {
+                private viewer: ViewerService,
+                private file: FileService) {
     }
 
 
@@ -40,7 +42,7 @@ export class ExplorerComponent implements OnInit {
     open(item: any) {
         if (item.directory) {
             this.store.dispatch(new Navigate(item.path));
-        } else if (this.viewer.hasInternalViewer(item)) {
+        } else if (this.file.hasInternalViewer(item)) {
             this.viewer.openInModal(item);
         } else {
             ipcRenderer.send('OPEN_ITEM', item.path);

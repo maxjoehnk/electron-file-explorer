@@ -7,11 +7,13 @@ import {MdDialogModule} from '@angular/material';
 import {ViewerService} from './viewer.service';
 import {ViewerDirective} from './viewer.directive';
 import {ViewerContainerComponent} from './container/container.component';
+import {FileExplorerCommonModule} from '../common/common.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        MdDialogModule
+        MdDialogModule,
+        FileExplorerCommonModule
     ],
     declarations: [
         ViewerDialogComponent,

@@ -10,6 +10,10 @@
            (open)="open($event)"
            (preview)="preview($event)"
            *ngIf="viewMode === 'table'"></app-table>
+<fe-grid-view [items]="items | async"
+              (open)="open($event)"
+              (preview)="preview($event)"
+              *ngIf="viewMode === 'grid'"></fe-grid-view>
 <button md-fab
     class="add-btn"
     [class.breadcrumb]="true"

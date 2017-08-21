@@ -1,1 +1,16 @@
-<video [src]="file?.path" controls></video>
+<video [src]="file?.path"
+       #video
+       (play)="playing = true"
+       (ended)="playing = false"></video>
+<div class="overlay"
+     [class.playing]="playing"></div>
+<button md-icon-button
+        (click)="toggle($event)"
+        [class.playing]="playing">
+    <md-icon fontIcon="mdi-play"
+             *ngIf="!playing">
+    </md-icon>
+    <md-icon fontIcon="mdi-pause"
+             *ngIf="playing">
+    </md-icon>
+</button>

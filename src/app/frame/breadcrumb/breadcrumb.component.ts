@@ -5,7 +5,7 @@ import {Navigate} from '../../store/actions/path';
 import {Observable} from "rxjs/Observable";
 import {remote} from 'electron';
 
-const { sep } = remote.require('path');
+const {sep} = remote.require('path');
 
 @Component({
     selector: 'app-breadcrumb',
@@ -16,7 +16,8 @@ export class BreadcrumbComponent implements OnInit {
 
     folders: Observable<any[]>;
 
-    constructor(private store: Store<IState>) {}
+    constructor(private store: Store<IState>) {
+    }
 
     ngOnInit() {
         this.folders = this.store

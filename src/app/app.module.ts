@@ -14,7 +14,8 @@ import {
     MdSlideToggleModule,
     MdButtonToggleModule,
     MdInputModule,
-    MdTableModule
+    MdTableModule,
+    MdGridListModule
 } from '@angular/material';
 import {CdkTableModule} from '@angular/cdk';
 import {StoreModule} from '@ngrx/store';
@@ -42,8 +43,9 @@ import {DetailedListComponent} from './explorer/detailed-list/detailed-list.comp
 import {TableComponent} from './explorer/table/table.component';
 import {HeaderComponent} from './sidebar/header/header.component';
 import {FileComponent} from './create/file/file.component';
-import {BytesPipe} from './pipes/bytes.pipe';
 import {DetailsComponent} from './details/details.component';
+import {GridComponent} from './explorer/grid/grid.component';
+import {FileExplorerCommonModule} from './common/common.module';
 
 @NgModule({
     declarations: [
@@ -63,8 +65,8 @@ import {DetailsComponent} from './details/details.component';
         TableComponent,
         HeaderComponent,
         FileComponent,
-        BytesPipe,
-        DetailsComponent
+        DetailsComponent,
+        GridComponent
     ],
     imports: [
         BrowserModule,
@@ -82,6 +84,7 @@ import {DetailsComponent} from './details/details.component';
         MdButtonToggleModule,
         MdInputModule,
         MdTableModule,
+        MdGridListModule,
         CdkTableModule,
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot(effects),
@@ -89,7 +92,8 @@ import {DetailsComponent} from './details/details.component';
             maxAge: 25
         }),
         ViewerModule,
-        PreviewModule
+        PreviewModule,
+        FileExplorerCommonModule
     ],
     providers: [],
     bootstrap: [AppComponent],

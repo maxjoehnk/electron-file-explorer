@@ -3,17 +3,16 @@ import {ImageViewerComponent} from './image/image.component';
 import {VideoViewerComponent} from './video/video.component';
 import {MdDialog} from '@angular/material';
 import {ViewerDialogComponent} from './dialog/dialog.component';
-
-const IMAGE_VIEWER = 'image';
-const VIDEO_VIEWER = 'video';
+import {FileService, VIDEO_VIEWER, IMAGE_VIEWER} from '../common/file.service';
 
 @Injectable()
 export class ViewerService {
 
-    constructor(private dialog: MdDialog) {}
+    constructor(private dialog: MdDialog,
+                private file: FileService) {}
 
     getComponentFromFile(file: any): Type<any> {
-        switch (this.getViewerType(file)) {
+        switch (this.file.getViewerType(file)) {
             case IMAGE_VIEWER:
                 return ImageViewerComponent;
             case VIDEO_VIEWER:
@@ -21,19 +20,6 @@ export class ViewerService {
             default:
                 return null;
         }
-    }
-
-    hasInternalViewer(file): boolean {
-        return !!this.getViewerType(file);
-    }
-
-    private getViewerType({mimetype}): string {
-        if (/image\/.*/.test(mimetype)) {
-            return IMAGE_VIEWER;
-        } else if (/video\/.*/.test(mimetype)) {
-            return VIDEO_VIEWER;
-        }
-        return null;
     }
 
     openInModal(file) {
