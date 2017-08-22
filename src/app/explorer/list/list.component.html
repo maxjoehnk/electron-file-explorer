@@ -1,13 +1,25 @@
 <md-nav-list dense>
-    <a md-list-item
-       *ngFor="let item of items"
-       (click)="onClick(item)"
-       (dblclick)="onDblClick(item)"
-       [class.hidden]="item.hidden">
-        <md-icon md-list-icon
-                 class="item-icon"
-                 [fontIcon]="item.icon"
-                 [style.color]="item.color"></md-icon>
-        <span class="item-label">{{item.filename}}</span>
-    </a>
+    <md-list-item *ngFor="let item of items; let i = index"
+                  (contextmenu)="onRightClick(item, i)">
+        <a md-line
+           (click)="onClick(item)"
+           (dblclick)="onDblClick(item)"
+           [class.hidden]="item.hidden">
+            <md-icon md-list-icon
+                     class="item-icon"
+                     [fontIcon]="item.icon"
+                     [style.color]="item.color"></md-icon>
+            <span class="item-label">{{item.filename}}</span>
+        </a>
+        <button md-icon-button
+            [md-menu-trigger-for]="menu">
+            <md-icon fontIcon="mdi-dots-vertical"></md-icon>
+            </button>
+    </md-list-item>
 </md-nav-list>
+<md-menu #menu="mdMenu">
+    <button md-menu-item> Open </button>
+    <button md-menu-item> Extract </button>
+    <button md-menu-item> Rename </button>
+    <button md-menu-item> Delete </button>
+</md-menu>
