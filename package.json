@@ -45,7 +45,7 @@
         "minimatch": "^3.0.4",
         "promisify-node": "^0.4.0",
         "rxjs": "^5.4.2",
-        "sqlite3": "^3.1.9",
+        "sqlite3": "^4.0.0",
         "systeminformation": "^3.25.1",
         "tar": "^4.0.1",
         "unzip": "^0.1.11",
